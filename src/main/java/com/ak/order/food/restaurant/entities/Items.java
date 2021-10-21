@@ -1,15 +1,13 @@
 package com.ak.order.food.restaurant.entities;
-import lombok.*;
-import org.hibernate.Hibernate;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -29,17 +27,4 @@ public class Items {
     private String description;
 
     private Double price;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Items items = (Items) o;
-        return Objects.equals(itemId, items.itemId);
-    }
-
-    @Override
-    public int hashCode() {
-        return 0;
-    }
 }
