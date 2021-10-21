@@ -1,17 +1,12 @@
 package com.ak.order.food.restaurant.entities;
 
 import lombok.*;
-import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -40,19 +35,6 @@ public class Restaurant {
 
     @OneToMany(targetEntity = Items.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "restaurant_id",referencedColumnName = "restaurant_id")
-    @ToString.Exclude
     private List<Items> items;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Restaurant that = (Restaurant) o;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return 0;
-    }
 }
