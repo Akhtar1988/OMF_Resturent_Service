@@ -26,17 +26,17 @@ public class Restaurant {
     @Column(name = "restaurant_name")
     private String restName;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING)
-    private Double budget;
+    @Column(name = "budget")
+    private String budget;
 
-    @Column(name = "cuisine")
+    @Column(name = "cuisine_name")
     private String cuisine;
 
     @Column(name = "location_name")
     private String location;
 
     @Column(name = "distance")
-    private Double distance;
+    private String distance;
 
     @OneToMany(targetEntity = Items.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "restaurant_id",referencedColumnName = "restaurant_id")

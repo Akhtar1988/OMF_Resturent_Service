@@ -10,9 +10,9 @@ public interface RestaurantServices {
 
     List<Restaurant> getRestaurantName(String restaurantName);
 
-    List<Restaurant> getRestaurantBudget(String searchQuery);
+    List<Restaurant> getRestaurantBudget(String searchBudget);
 
-    List<Restaurant> getRestaurantLocation(String searchQuery);
+    List<Restaurant> getRestaurantLocation(String searchLocation);
 
     List<Restaurant> getRestaurent();
 

@@ -26,18 +26,18 @@ public class RestaurantServicesImpl implements RestaurantServices {
     }
 
     @Override
-    public List<Restaurant> getRestaurantName(String searchQuery) {
-        return search(searchQuery);
+    public List<Restaurant> getRestaurantName(String searchName) {
+        return searchByName(searchName);
     }
 
     @Override
-    public List<Restaurant> getRestaurantBudget(String searchQuery) {
-        return search(searchQuery);
+    public List<Restaurant> getRestaurantBudget(String searchBudget) {
+        return searchByBudget(searchBudget);
     }
 
     @Override
-    public List<Restaurant> getRestaurantLocation(String searchQuery) {
-        return search(searchQuery);
+    public List<Restaurant> getRestaurantLocation(String searchLocation) {
+        return searchByLocation(searchLocation);
     }
 
     @Override
@@ -47,22 +47,74 @@ public class RestaurantServicesImpl implements RestaurantServices {
 
     @Override
     public List<Restaurant> getRestaurantCuisine(String cuisine) {
-        return search(cuisine);
+        return searchByCuisine(cuisine);
     }
 
     @Override
     public List<Restaurant> getRestaurantDistance(String distance) {
-        return search(distance);
+        return searchByDistance(distance);
     }
 
 
-    private List<Restaurant> search(String searchQuery) {
+    private List<Restaurant> searchByName(String searchQuery) {
         list = new ArrayList<>();
         List<Restaurant> ss = repository.findAll();
         ss.forEach(restaurant1 -> {
-            if (searchQuery.equals(restaurant1.getRestName())) {
+            if (searchQuery.equalsIgnoreCase(restaurant1.getRestName())) {
                 Restaurant restaurant2 = new Restaurant();
                 restaurant2.setRestName(searchQuery);
+                list.add(restaurant2);
+            }
+        });
+        return list;
+    }
+
+    private List<Restaurant> searchByBudget(String searchQuery) {
+        list = new ArrayList<>();
+        List<Restaurant> ss = repository.findAll();
+        ss.forEach(restaurant1 -> {
+            if (searchQuery.equals(restaurant1.getBudget())) {
+                Restaurant restaurant2 = new Restaurant();
+                restaurant2.setBudget(searchQuery);
+                list.add(restaurant2);
+            }
+        });
+        return list;
+    }
+
+    private List<Restaurant> searchByLocation(String searchQuery) {
+        list = new ArrayList<>();
+        List<Restaurant> ss = repository.findAll();
+        ss.forEach(restaurant1 -> {
+            if (searchQuery.equals(restaurant1.getLocation())) {
+                Restaurant restaurant2 = new Restaurant();
+                restaurant2.setLocation(searchQuery);
+                list.add(restaurant2);
+            }
+        });
+        return list;
+    }
+
+    private List<Restaurant> searchByCuisine(String searchQuery) {
+        list = new ArrayList<>();
+        List<Restaurant> ss = repository.findAll();
+        ss.forEach(restaurant1 -> {
+            if (searchQuery.equals(restaurant1.getCuisine())) {
+                Restaurant restaurant2 = new Restaurant();
+                restaurant2.setCuisine(searchQuery);
+                list.add(restaurant2);
+            }
+        });
+        return list;
+    }
+
+    private List<Restaurant> searchByDistance(String searchQuery) {
+        list = new ArrayList<>();
+        List<Restaurant> ss = repository.findAll();
+        ss.forEach(restaurant1 -> {
+            if (searchQuery.equals(restaurant1.getDistance())) {
+                Restaurant restaurant2 = new Restaurant();
+                restaurant2.setDistance(searchQuery);
                 list.add(restaurant2);
             }
         });

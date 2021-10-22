@@ -19,6 +19,7 @@ public class RestaurantController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PostMapping
     public Restaurant createRestaurant(@RequestBody RequestModel requestModel) {
+
         return restaurantServices.createRestaurant(requestModel.getRestaurant());
     }
 
@@ -28,27 +29,31 @@ public class RestaurantController {
         return getResponse(restaurantServices.getRestaurent());
     }
 
-    @GetMapping(value = "/{name}")
+    @ResponseStatus(value = HttpStatus.OK)
+    @GetMapping(value = "searchByName/{name}")
     public ResponseModel searchByName(@PathVariable(name = "name") String restaurantName) {
         return getResponse(restaurantServices.getRestaurantName(restaurantName));
     }
 
-    @GetMapping(value = "/{budget}")
-    public ResponseModel searchByBudget(@PathVariable(name = "budget") String searchQuery) {
-        return getResponse(restaurantServices.getRestaurantBudget(searchQuery));
+    @ResponseStatus(value = HttpStatus.OK)
+    @GetMapping(value = "searchByBudget/{budget}")
+    public ResponseModel searchByBudget(@PathVariable(name = "budget") String searchBudget) {
+        return getResponse(restaurantServices.getRestaurantBudget(searchBudget));
     }
 
-    @GetMapping(value = "/{location}")
-    public ResponseModel searchByLocation(@PathVariable(name = "location") String searchQuery) {
-        return getResponse(restaurantServices.getRestaurantLocation(searchQuery));
+    @ResponseStatus(value = HttpStatus.OK)
+    @GetMapping(value = "searchByLocation/{location}")
+    public ResponseModel searchByLocation(@PathVariable(name = "location") String searchLocation) {
+        return getResponse(restaurantServices.getRestaurantLocation(searchLocation));
     }
 
-    @GetMapping(name = "/{cuisine}")
-    private ResponseModel searchByCuisine(@PathVariable(name = "cuisine") String cuisine) {
-        return getResponse(restaurantServices.getRestaurantCuisine(cuisine));
+    @GetMapping(value = "searchByCuisine/{cuisine}")
+    private ResponseModel searchByCuisine(@PathVariable(name = "cuisine") String searchCuisine) {
+        return getResponse(restaurantServices.getRestaurantCuisine(searchCuisine));
     }
 
-    @GetMapping(value = "/{distance}")
+    @ResponseStatus(value = HttpStatus.OK)
+    @GetMapping(value = "searchByDistance/{distance}")
     private ResponseModel searchByDistance(@PathVariable(name = "distance") String distance) {
         return getResponse(restaurantServices.getRestaurantDistance(distance));
     }
