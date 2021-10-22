@@ -1,8 +1,8 @@
-package com.ak.order.food.restaurant.serviceimp;
+package com.ak.order.food.restaurant.restaurants.serviceimp;
 
-import com.ak.order.food.restaurant.entities.Restaurant;
-import com.ak.order.food.restaurant.repositories.RestaurantRepository;
-import com.ak.order.food.restaurant.services.RestaurantServices;
+import com.ak.order.food.restaurant.restaurants.entities.Restaurant;
+import com.ak.order.food.restaurant.restaurants.repositories.RestaurantRepository;
+import com.ak.order.food.restaurant.restaurants.services.RestaurantServices;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

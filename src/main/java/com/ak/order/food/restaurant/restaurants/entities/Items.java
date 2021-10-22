@@ -1,4 +1,4 @@
-package com.ak.order.food.restaurant.entities;
+package com.ak.order.food.restaurant.restaurants.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

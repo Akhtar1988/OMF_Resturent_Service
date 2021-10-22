@@ -1,6 +1,6 @@
-package com.ak.order.food.restaurant.services;
+package com.ak.order.food.restaurant.restaurants.services;
 
-import com.ak.order.food.restaurant.entities.Restaurant;
+import com.ak.order.food.restaurant.restaurants.entities.Restaurant;
 
 import java.util.List;
 
