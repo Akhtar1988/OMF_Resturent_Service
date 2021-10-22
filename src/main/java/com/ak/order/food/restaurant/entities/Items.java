@@ -1,4 +1,5 @@
 package com.ak.order.food.restaurant.entities;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,5 +27,6 @@ public class Items {
 
     private String description;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private Double price;
 }

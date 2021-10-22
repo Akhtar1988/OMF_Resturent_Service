@@ -1,6 +1,10 @@
 package com.ak.order.food.restaurant.entities;
 
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,10 +22,11 @@ public class Restaurant {
     @Column(name = "restaurant_id")
     private Long id;
 
+
     @Column(name = "restaurant_name")
     private String restName;
 
-    @Column(name = "budget")
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private Double budget;
 
     @Column(name = "cuisine")
