@@ -1,5 +1,6 @@
 package com.ak.order.food.restaurant.restaurants.serviceimp;
 
+import com.ak.order.food.restaurant.restaurants.entities.Items;
 import com.ak.order.food.restaurant.restaurants.entities.Restaurant;
 import com.ak.order.food.restaurant.restaurants.repositories.RestaurantRepository;
 import com.ak.order.food.restaurant.restaurants.services.RestaurantServices;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @NoArgsConstructor
@@ -61,9 +63,8 @@ public class RestaurantServicesImpl implements RestaurantServices {
         List<Restaurant> ss = repository.findAll();
         ss.forEach(restaurant1 -> {
             if (searchQuery.equalsIgnoreCase(restaurant1.getRestName())) {
-                Restaurant restaurant2 = new Restaurant();
-                restaurant2.setRestName(searchQuery);
-                list.add(restaurant2);
+                restaurant1.setRestName(searchQuery);
+                list.add(restaurant1);
             }
         });
         return list;
@@ -74,9 +75,8 @@ public class RestaurantServicesImpl implements RestaurantServices {
         List<Restaurant> ss = repository.findAll();
         ss.forEach(restaurant1 -> {
             if (searchQuery.equals(restaurant1.getBudget())) {
-                Restaurant restaurant2 = new Restaurant();
-                restaurant2.setBudget(searchQuery);
-                list.add(restaurant2);
+                restaurant1.setBudget(searchQuery);
+                list.add(restaurant1);
             }
         });
         return list;
@@ -87,9 +87,8 @@ public class RestaurantServicesImpl implements RestaurantServices {
         List<Restaurant> ss = repository.findAll();
         ss.forEach(restaurant1 -> {
             if (searchQuery.equals(restaurant1.getLocation())) {
-                Restaurant restaurant2 = new Restaurant();
-                restaurant2.setLocation(searchQuery);
-                list.add(restaurant2);
+                restaurant1.setLocation(searchQuery);
+                list.add(restaurant1);
             }
         });
         return list;
@@ -100,9 +99,8 @@ public class RestaurantServicesImpl implements RestaurantServices {
         List<Restaurant> ss = repository.findAll();
         ss.forEach(restaurant1 -> {
             if (searchQuery.equals(restaurant1.getCuisine())) {
-                Restaurant restaurant2 = new Restaurant();
-                restaurant2.setCuisine(searchQuery);
-                list.add(restaurant2);
+                restaurant1.setCuisine(searchQuery);
+                list.add(restaurant1);
             }
         });
         return list;
@@ -113,9 +111,8 @@ public class RestaurantServicesImpl implements RestaurantServices {
         List<Restaurant> ss = repository.findAll();
         ss.forEach(restaurant1 -> {
             if (searchQuery.equals(restaurant1.getDistance())) {
-                Restaurant restaurant2 = new Restaurant();
-                restaurant2.setDistance(searchQuery);
-                list.add(restaurant2);
+                restaurant1.setDistance(searchQuery);
+                list.add(restaurant1);
             }
         });
         return list;
