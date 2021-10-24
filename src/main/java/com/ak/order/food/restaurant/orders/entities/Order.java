@@ -18,20 +18,26 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "order_id")
-    private Long orderId;
+    private int orderId;
 
-    private String name;
-
-   // @GeneratedValue(strategy = GenerationType.AUTO)
     private String date;
 
     private int qtyValue;
 
     @Column(name = "total_price")
-    private Double totalPrice;
+    private Double totalAmount;
 
-    @OneToOne
-    @JoinColumn(name = "payment_payment_id")
+    @OneToMany(targetEntity = ItemsOrder.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_id", referencedColumnName = "order_id")
+    private List<ItemsOrder> items;
+
+    @Column(name = "restaurant_id")
+    private Long restaurantId;
+
+    @Column(name = "order_status")
+    private String orderStatus;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade =  CascadeType.ALL, mappedBy = "order")
     private Payment payment;
 
 

@@ -1,15 +1,13 @@
 package com.ak.order.food.restaurant.orders.controller;
 
 import com.ak.order.food.restaurant.orders.entities.Order;
-import com.ak.order.food.restaurant.orders.model.OrderRequest;
 import com.ak.order.food.restaurant.orders.model.OrderResponse;
 import com.ak.order.food.restaurant.orders.services.OrderService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @RequestMapping("api/order")
@@ -18,19 +16,21 @@ public class OrderController {
 
     private final OrderService orderService;
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/create_order")
-    public OrderResponse createOrder(@RequestBody Order orderRequest) {
-           return orderService.createOrder(orderRequest);
+    public OrderResponse createOrder(@RequestBody Order order) {
+           return orderService.createOrder(order);
 
     }
-
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/viewAllOrderDetails")
-    public List<Order> getViewOrderDetails(){
+    public List<Order> getAllOrder(){
         return orderService.getAllOrder();
 
     }
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/getViewById/{id}")
-     public Optional<Order> getOrderById(@PathVariable("id") Long id){
+     public Order getOrderById(@PathVariable("id") Long id){
         return orderService.getViewById(id);
      }
 

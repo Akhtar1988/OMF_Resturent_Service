@@ -30,5 +30,15 @@ public class Payment {
 
     private String payment_status;
 
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order;
+
+
+
+
+
+
+
 
 }

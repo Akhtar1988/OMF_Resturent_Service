@@ -13,24 +13,6 @@ import java.util.Collections;
 public class OmfRestaurantServiceApplication {
 
 	public static void main(String[] args) {
-	//	SpringApplication.run(OmfRestaurantServiceApplication.class, args);
-
-		ConfigurableApplicationContext context = SpringApplication.run(OmfRestaurantServiceApplication.class, args);
-		RestaurantServicesImpl restaurantServicesImpl = context.getBean("restaurantServicesImpl" , RestaurantServicesImpl.class);
-
-		Restaurant restaurant1 = new Restaurant();
-		restaurant1.setRestName("Moti");
-		restaurant1.setBudget("10.0");
-		restaurant1.setDistance("4.0");
-		restaurant1.setCuisine("Food");
-		restaurant1.setLocation("Bangalore");
-		Items items = new Items();
-		items.setItemName("Paneer");
-		items.setDescription("Paneer is very spicy");
-		items.setOffer(50);
-		items.setPrice(150.0);
-		restaurant1.setItems(Collections.singletonList(items));
-
-		restaurantServicesImpl.createRestaurant(restaurant1);
+		SpringApplication.run(OmfRestaurantServiceApplication.class, args);
 	}
 }

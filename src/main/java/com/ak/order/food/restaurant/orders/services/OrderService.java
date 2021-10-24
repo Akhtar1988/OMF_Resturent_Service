@@ -1,6 +1,7 @@
 package com.ak.order.food.restaurant.orders.services;
 
 import com.ak.order.food.restaurant.orders.entities.Order;
+import com.ak.order.food.restaurant.orders.entities.Payment;
 import com.ak.order.food.restaurant.orders.model.OrderResponse;
 
 import java.util.List;
@@ -12,7 +13,11 @@ public interface OrderService {
 
     List<Order> getAllOrder();
 
-    Optional<Order> getViewById(Long id);
+    Order getViewById(Long id);
 
     List<Order> deleteOrder(Long id);
+
+    Payment makePayment(Payment payment);
+
+    Payment refundAmount(Payment payment);
 }
