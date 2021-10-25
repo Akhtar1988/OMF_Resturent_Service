@@ -1,6 +1,6 @@
-package com.ak.order.food.restaurant.restaurants.repositories;
+package com.ak.restaurant.service.restaurants.repositories;
 
-import com.ak.order.food.restaurant.restaurants.entities.Restaurant;
+import com.ak.restaurant.service.restaurants.entities.Restaurant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.ak.order.food.restaurant;
+package com.ak.restaurant.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

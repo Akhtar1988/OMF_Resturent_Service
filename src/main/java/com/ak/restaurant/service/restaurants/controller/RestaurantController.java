@@ -1,9 +1,9 @@
-package com.ak.order.food.restaurant.restaurants.controller;
+package com.ak.restaurant.service.restaurants.controller;
 
-import com.ak.order.food.restaurant.restaurants.entities.Restaurant;
-import com.ak.order.food.restaurant.restaurants.model.RequestModel;
-import com.ak.order.food.restaurant.restaurants.model.ResponseModel;
-import com.ak.order.food.restaurant.restaurants.services.RestaurantServices;
+import com.ak.restaurant.service.restaurants.entities.Restaurant;
+import com.ak.restaurant.service.restaurants.model.RequestModel;
+import com.ak.restaurant.service.restaurants.model.ResponseModel;
+import com.ak.restaurant.service.restaurants.services.RestaurantServices;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.ak.order.food.restaurant;
+package com.ak.restaurant.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

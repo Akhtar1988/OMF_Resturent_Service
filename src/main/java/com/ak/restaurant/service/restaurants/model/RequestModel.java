@@ -1,6 +1,6 @@
-package com.ak.order.food.restaurant.restaurants.model;
+package com.ak.restaurant.service.restaurants.model;
 
-import com.ak.order.food.restaurant.restaurants.entities.Restaurant;
+import com.ak.restaurant.service.restaurants.entities.Restaurant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

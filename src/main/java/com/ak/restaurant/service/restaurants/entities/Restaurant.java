@@ -1,4 +1,4 @@
-package com.ak.order.food.restaurant.restaurants.entities;
+package com.ak.restaurant.service.restaurants.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
