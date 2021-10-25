@@ -1,6 +1,5 @@
 package com.ak.order.food.restaurant.restaurants.serviceimp;
 
-import com.ak.order.food.restaurant.restaurants.entities.Items;
 import com.ak.order.food.restaurant.restaurants.entities.Restaurant;
 import com.ak.order.food.restaurant.restaurants.repositories.RestaurantRepository;
 import com.ak.order.food.restaurant.restaurants.services.RestaurantServices;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @NoArgsConstructor
